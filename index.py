@@ -1,5 +1,10 @@
+import os
 from flask import Flask, render_template,request
 app = Flask(__name__)
+
+# 這裡明確指定 templates 資料夾的路徑
+template_dir = os.path.abspath('./templates')
+app = Flask(__name__, template_folder=template_dir)
 
 @app.route("/")
 def index():
